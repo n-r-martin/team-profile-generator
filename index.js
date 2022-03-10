@@ -1,12 +1,23 @@
+///// VARIABLES /////
+
 // required packages stored in shorthand variables
+const fs = require('fs');
 const inquirer = require('inquirer');
-// const Employee = require('./lib/employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-// const Employee = require('./lib/employee.js');
+const htmlGenny = require('./src/htmlgenerator.js')
 
-// Run Inquirer to collect information from the user
+// Global Variables
+let team = {
+    manager: "",
+    engineers: [],
+    interns: []
+};
+
+///// FUNCTIONS /////
+
+// Inquirer Functions
 const managerPrompt = () => {
     return inquirer.prompt([
         {
@@ -83,18 +94,7 @@ const memberInfoPrompt = () => {
 }
 
 
-
-
-
-
-
-
-let team = {
-    manager: "",
-    engineers: [],
-    interns: []
-};
-
+// Application Functions
 // Call prompts individually - instantiate objects and push objects to globally accessible array
 // Smaller the better - for testing
 const init = () => {
@@ -126,24 +126,31 @@ const addMember = () => {
             addMember();
            })
         } else {
-            console.log('-----------------');
-            console.log('creating team... ');
-            console.log('-----------------');
-            console.log('Your Team is:');
-            console.log(team);
+            console.log('-----------------')
+            console.log('creating team... ')
+            console.log('-----------------')
+            console.log('Your Team is:')
+            console.log(team)
+            generateTeam(team);
         } 
-    })
+    }) 
 };
 
-///// APPLICATION GO BRRRRRRRR -----> 
-init()
-    .then((team) => genrateTeam(team))
-;
-    
-//     // .then(() => console.log('Successfully generated README!'))
-//     // .catch((err) => console.error(err));
-// };
+const generateTeam = (team) => {
+    fs.writeFileSync('./dist/index.html', htmlGenny.generateHTML(team))
+    console.log('Successfully generated team!!!')
+}
 
+
+///// APPLICATION GO BRRRRRRRR -----> 
+
+init()
+    
+
+///// Exports
+module.exports = {
+    team
+}
 
 
 
