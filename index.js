@@ -143,11 +143,10 @@ const generateTeam = (team) => {
 
 
 ///// APPLICATION GO BRRRRRRRR -----> 
-
 init()
     
 
-///// Exports
+///// EXPORTS /////
 module.exports = {
     team
 }
