@@ -8,9 +8,15 @@
   <br />
   <br />
 
+  ![Image of generated html page showing team members.](assets/generated-html-screengrab.png)
+   <br />
+  <br />
+
+
   ##### Table of Contents  
   [How to Install](#installation)  
   [Usage](#usage)   
+  [Video Walkthrough](#video-walkthrough) 
   [How to Contribute](#contribution)  
   [Contact](#contact)  
   <br />
@@ -22,10 +28,21 @@
   <br />
   <br />
 
+![Image of code editor showing code and terminal for application.](assets/ide-screengrab.png)
+ <br />
+<br />
+
   <a name="usage"></a>
 
   ## Usage
   Make sure your generated index.html file and style.css file are in the same directory in order for the styling to apply.
+  <br />
+  <br />
+
+  <a name="video-walkthrough"></a>
+
+  ## Video Walkthrough
+  https://youtu.be/zpo76rrORpE
   <br />
   <br />
 
